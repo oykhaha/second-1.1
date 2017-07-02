@@ -1,0 +1,363 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<style>
+		*{
+			margin: 0;
+			box-sizing: border-box;
+		}
+		body{
+			background-color: #FFFFFF;
+		}    
+		.header{
+			width: 100%;
+			height: 80px;
+			background-color:#000000;
+			display: flex;
+			color: #FFFFFF;
+			font-size: 16px;
+			min-width: 960px;
+		}
+        .logo_img{
+            margin: 15px 240px ;
+        	display: flex;
+        	justify-content: flex-start;
+        }
+        .nav{
+        	margin: 0 ;
+        	height: 100%;
+        	display: flex;
+        }
+		.nav_list{
+			display: flex;
+			align-items: center;
+		}
+	    .opt{
+            margin-left: 50px;
+		}
+		.banner{
+			width: 100%;
+			height: 260px;
+			min-width: 960px;
+			position: relative;
+            overflow: hidden;
+            color: #FFFFFF;
+		}
+        .left_banner_pic{
+        	right: 50%;
+        	position: absolute;
+        }
+        .right_banner_pic{
+        	position: absolute;
+        	left: 50%;
+        }
+        .banner-text{
+        	height: 145px;
+        	position: absolute;
+        	left: 240px;
+        	top: 55px;
+        }
+        .opacity{
+        	font-size: 32px;
+        	opacity: .5;
+        }
+        .not-opacity{
+        	font-size: 44px;
+        }
+        .content{
+        	height: 240px;
+        	width: 960px;
+        	margin: 20px auto;
+        	display: flex;
+        }
+        .box{
+        	flex:1;
+        	margin-right: 15px;
+        	border: 1px solid #A28383;
+        	padding: 20px;
+        	display: flex;
+        	flex-flow: row wrap;
+        	align-items: flex-start;
+        	justify-content: space-between;
+        }
+        .big_title{
+        	font-size: 48px;
+        	color: #020202;
+        }
+        .seconde_title{
+        	font-size: 24px;
+        	color: #A59494;
+        }
+        .scenery{
+        	position: relative;
+        	color: #FFFFFF;
+        	margin: auto;
+        	width: 960px;
+        }
+        .eraser_text{
+        	position: absolute;
+        	left: 15px;
+        	bottom: 15px;
+        	font-size: 16px;
+        	color: #FFFFFF;
+        }
+        .pic_btn_container{
+        	margin: 10px auto;
+        	width: 200px;
+        	display: flex;
+        	justify-content: center;
+        }
+        .pic_btn{
+        	width: 40px;
+        	height: 3px;
+        	margin-right: 20px;
+        	background-color: #D8B9B9;
+        }
+        .pic_btn_selected{
+        	width: 40px;
+        	margin-right: 20px;
+        	background-color: #712828;
+        }
+        .table_container{
+        	width: 960px;
+        	margin:15px auto;
+        	display: flex;
+        	flex-direction: column;
+        }
+        .table_title{
+        	display: flex;
+        	font-size: 24px;
+        }
+        .tab{
+        	flex:auto;
+        	height: 60px;
+        	display: flex;
+        	justify-content:center;
+        	align-items: center;
+        	border-bottom: 2px solid #897777;
+        }
+        .tab_selected{
+        	border:2px solid #897777;
+        	border-bottom: none;
+        }
+        .table_caption{
+        	height: 120px;
+            display: flex;
+            align-items: center;
+            font-size: 18px;
+            font-weight: bold;
+        }
+        .table_sheet{
+        	width: 100%;
+        	display: flex;
+        	flex-direction: column;
+        	border-top: 1px solid #B0A1A1;
+        	border-bottom: 1px solid #B0A1A1;
+        }
+        .row{
+        	width: 100%;
+        	display: flex;
+        }
+        .col{
+        	flex:1;
+        	height: 60px;
+        	display: flex;
+        	justify-content: center;
+        	align-items: center;
+        	border-top:1px solid #B0A1A1;
+        	border-bottom: 1px solid #B0A1A1;
+        	font-size: 14px;
+        	padding: 0 20px;
+        }
+        .col:nth-child(odd){
+        	background-color: #ADCAD0;
+        }
+        .col:nth-child(1){
+        	font-size: 18px;
+        	font-weight: bold;
+        }
+        .row:nth-child(1){
+        	font-size: 18px;
+        	font-weight: bold;
+        }
+        .free{
+        	color: #64AF70;
+        }
+        .per_price{
+        	color: #7798C8;
+        }
+        .whole_price{
+        	color: #CC3333;
+        }
+        .per_month{
+            font-size: 9px;
+            margin-bottom: 9px;
+        }
+        .information_container{
+        	margin: 10px auto;
+        	height: 220px;
+        	width: 960px;
+        	position: relative;
+        }
+        .form_info{
+        	position: absolute;
+        	top: 40px;
+        	left: 80px;
+        	display: flex;
+        	flex-flow: column wrap;
+        	height: 135px;
+        }
+        .select_info,.input_info{
+        	width: 225px;
+        	height: 35px;
+        	border:1px solid #B08B8B;
+        	margin-right: 10px;
+        	margin-bottom: 10px;
+        }
+        .Submit_info{
+        	position: absolute;
+        	width: 100px;
+        	left: 240px;
+        	bottom: 9px;
+        	color: #FFFFFF;
+        	height: 40px;
+        	border:1px solid #7DAAC3;
+        	border-radius: 10px;
+        	background: linear-gradient(to bottom, #FFFFFF, #77ADE2);
+        }
+        .fooster{
+        	height: 70px;
+            display: flex;
+            justify-content: center;
+            align-items: flex-end;
+            font-size: 14px;
+        }
+	</style>
+	<title>
+	</title>
+</head>
+<body>
+	<div class="header">
+		<div class="nav">
+			<img class="logo_img" src="images/logo.png">
+			<div class="nav_list">
+				<div class="opt">HOME</div>
+				<div class="opt">PRODUCT <img class="button_alike" src="images/button_alike.png" alt=""></div>
+				<div class="opt">SUPPORT <img class="button_alike" src="images/button_alike.png" alt=""></div>
+				<div class="opt">ABOUT <img class="button_alike" src="images/button_alike.png" alt=""></div>
+			</div>
+		</div>
+	</div>
+	<div class="banner">
+		<img class="left_banner_pic" src="images/left_banner.png" alt="">
+		<img class="right_banner_pic" src="images/right_banner.png" alt="">
+		<div class="content banner-text">
+          <div class="opacity">HELLO<br>WORLD</div>
+          <div class="not-opacity">PRODUCT</div>
+        </div>
+	</div>
+	<div class="content">
+		<div class="box">
+			<div class="Title">
+				<div class="big_title">One</div>
+				<div class="seconde_title">Level2 Title</div>
+			</div>
+				<img src="images/content_img_1.jpg" alt="">
+				<div class="text">Some text Some text Some text Some text Some text Some text Some text</div>			
+		</div>
+		<div class="box">
+			<div class="Title">
+				<div class="big_title">Two</div>
+				<div class="seconde_title">Level2 Title</div>
+			</div>
+				<img src="images/content_img_2.jpg" alt="">
+				<div class="text">Some text Some text Some text Some text Some text Some text Some text</div>
+		</div>
+		<div class="box">
+			<div class="Title">
+				<div class="big_title">Three</div>
+				<div class="seconde_title">Level2 Title</div>
+			</div>
+				<img src="images/content_img_3.jpg" alt="">
+				<div class="text">Some text Some text Some text Some text Some text Some text Some text</div>
+		</div>
+	</div>
+	<div class="scenery-select">
+		<div class="scenery">
+			<img src="images/ad_scenery.jpg" alt="">
+			<div class="eraser_text">SOME TEXT</div>
+	    </div>
+	    <div class="pic_btn_container">
+		    <div class="pic_btn_selected"></div>
+		    <div class="pic_btn"></div>
+		    <div class="pic_btn"></div>
+	    </div>
+	</div>
+	
+	<div class="table_container">
+		<div class="table_title">
+			<div class="tab">TABONE</div>
+            <div class="tab_selected">TABTOW</div>
+            <div class="tab">TABTHR</div>
+            <div class="tab">TABFOR</div>
+		</div>
+		<div class="table_caption">Table Caption</div>
+		<div class="table_sheet">
+			<div class="row first_row">
+				<div class="col"></div>
+				<div class="col">Free Version</div>
+				<div class="col">Personal Version</div>
+				<div class="col">Company Version</div>
+			</div>
+			<div class="row">
+				<div class="col">Feature A</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+			</div>
+			<div class="row">
+				<div class="col">Feature B</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+			</div>
+			<div class="row">
+				<div class="col">Feature C</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+			</div>
+			<div class="row">
+				<div class="col">Feature D</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+				<div class="col">Some Text Some Text Some Text</div>
+			</div>
+			<div class="row last">
+				<div class="col">Price</div>
+				<div class="col free">Free</div>
+				<div class="col per_price">$9.9/<span class="per_month">mo</span></div>
+				<div class="col whole_price">$99.99/<span class="per_month">mo</span></div>
+			</div>
+		</div>
+	</div>
+	<div class="information_container">
+		<img src="images/fooster_ad.jpg" alt="">
+		<div class="form_info">
+			<select class="select_info" name="" id="">
+				<option value="">select your country</option>
+			</select>
+			<select class="select_info" name="" id="">
+				<option value="">select your country</option>
+			</select>
+			<input class="input_info" type="text" placeholder="input your email address">
+			<div class="button">
+				<button class="Submit_info">Submit</button>
+			</div>
+			
+		</div> 
+	</div>
+	<div class="fooster"> © 2017 IFE</div>
+</body>
+</html>

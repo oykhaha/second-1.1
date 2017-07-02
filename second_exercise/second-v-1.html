@@ -1,0 +1,603 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <style>
+        	*{
+        		margin: 0;
+        		padding: 0;
+        		font-family: "Microsoft YaHei";
+        	}
+        	body{
+        		min-width: 960px;
+        	}
+        	.nav{
+        		background-color: #000000;
+        		color: #FFFFFF;
+        		width: 100%;
+        		height: 80px;
+        		display: flex;
+        		font-size: 16px;
+        	}
+        	.nav-pic{
+        		margin: auto;
+        	}
+        	.nav-list-b{
+        		display: flex;
+        		justify-content: flex-start;
+        		width: 50%;
+        	}
+        	.nav-list{
+        		display: flex;
+        		justify-content:space-between;
+        		width: 500px;
+        	}
+            .listi{
+            	align-self: center;
+            	position: relative;
+            	line-height: 80px;
+            }
+            .menu{
+            	position: absolute;
+            }
+            .child-menu{
+            	display: none;
+            	line-height: 20px;
+            	padding: 9px 15px 10px;
+            	font-size: 20px;
+            	margin-top: 2px;
+            	color: #F30404;
+            	background-color: #3C3333;
+            }
+            .listi:hover .child-menu{
+            	display: block;
+            }
+            .listi:hover{
+            	background:#5F5050;
+            }  
+            .banner{
+            	width: 100%;
+            	display: flex;
+            	height: 260px;
+            	margin-bottom: 20px;
+            }   
+            .left-banner{
+            	background: url("images/left_banner.png");
+            	height: 100%;
+            	background-size: 100% 100%;
+            	color: #FFFFFF;
+            	width: 50%;
+            	position: relative;
+            }
+            .left-title{
+            	position: absolute;
+            	margin: auto;
+            	left: 0px;
+            	right: 0px;
+            	top: 0px;
+                bottom: 0px;
+                width: 220px;
+                height: 150px;
+            }
+            .left-title > h1{
+            	font-size: 44px;
+            }
+            .left-title > h2{
+            	font-size: 32px;
+            	opacity: .8;
+            	margin-bottom: 
+            }
+            .right-banner{
+            	background: url("images/right_banner.png");
+            	height: 100%;
+            	background-size: 100% 100%;
+            	width: 50%;
+            }
+            .content{
+            	margin: 0 auto;
+            	width: 960px;
+            }
+            .m1{
+            	display: flex;
+            	height: 240px;
+            	justify-content: space-between;
+            }
+            .box-title{
+            	margin-right: 25px;
+            }
+            .fst{
+            	display: flex;
+            	margin-bottom: 20px;
+            }
+            .content-box{
+            	border: 1px solid #2E2626;
+            	padding: 20px;
+            	margin-right: 20px;
+        	    display: flex;
+        	    flex-direction: column;
+            }
+            .title-pro{
+            	font-size: 48px;
+            }
+            .title-sub{
+            	font-size: 24px;
+            }
+            .scenery{
+            	position: relative;
+            	width: 960px;
+            	margin: auto;
+            	margin-top: 20px;
+            	margin-bottom: 20px;
+            }
+            #photos{
+            	width: 960px;
+            }
+            .m2-text{
+            	position: absolute;
+            	left: 10px;
+            	font-size: 16px;
+            	bottom: 10px;
+            	color: #FFFFFF;
+            }
+            .pic-select{
+            	display: flex;
+            	justify-content: center;
+            }
+            .btn{
+            	width: 40px;
+        	    height: 3px;
+        	    margin-right: 20px;
+        	    background-color: #D8B9B9;
+        	    margin-bottom: 20px;
+            }
+            .selected{
+        	    background-color: #712828;
+            }
+            .m3-list{
+            	height: 60px;
+            	display: flex;
+            	justify-content: center;
+            	
+            }
+            .list-tab{
+            	font-size: 24px;
+            	display: flex;
+            	justify-content: center;
+            	width: 25%;
+                border-bottom: 1px solid #B9A2A2;
+               
+            }
+            .s{
+            	border:1px solid #B9A2A2;
+            	border-bottom: none;
+            }
+            .m3-cp{
+            	display: flex;
+            	height: 120px;
+            	align-items: center;
+                font-size: 18px;
+                font-weight: bold;
+            }
+            .exl-sheet .sel{
+            	display: flex;
+            }
+            .sheet{
+            	display:none; 
+            	flex-flow: row wrap;
+            	width: 100%;
+            }
+            .sheet-row{
+            	display: flex;
+            	width: 100%;
+            }
+            .col{
+            	height: 60px;
+            	flex:1;
+        	    display: flex;
+        	    justify-content: center;
+        	    align-items: center;
+        	    border-top:1px solid #B0A1A1;
+        	    border-bottom: 1px solid #B0A1A1;
+        	    font-size: 14px;
+        	    padding: 0 20px;
+            }
+            .col:nth-child(odd){
+        	    background-color: #ADCAD0;
+            }
+            .col:nth-child(1){
+          	    font-size: 18px;
+        	    font-weight: bold;
+            }
+            .row:nth-child(1){
+          	    font-size: 18px;
+        	    font-weight: bold;
+            }
+           .free{
+        	    color: #64AF70;
+            }
+            .per-price{
+        	    color: #7798C8;
+            }
+            .whole{
+        	    color: #CC3333;
+            }
+            .per-month{
+                font-size: 9px;
+                margin-bottom: 9px;
+            }
+            .m4{
+            	height: 220px;
+            	position: relative;
+            	margin-top: 40px;
+            	background: url("images/fooster_ad.jpg");
+            	background-size: 100% 100%;
+            }
+            .info-form{
+            	display: flex;
+            	flex-direction: column;
+            }
+            .sinfo,.input-info{
+        	    width: 225px;
+        	    height: 35px;
+        	    border:1px solid #B08B8B;
+        	    margin-right: 10px;
+        	    margin-bottom: 10px;
+            }
+            .form-info{
+            	display: flex;
+            	position: absolute;
+            	margin-top: 50px;
+            	margin-left: 100px;
+            }
+            .city-c{
+            	display: none;
+            }
+            .button{
+            	display: flex;
+            	align-items: flex-end;
+            }
+            .Submit-info{
+            	margin-bottom: 10px;
+            	width: 100px;
+            	height: 40px;
+        	    border:1px solid #7DAAC3;
+        	    border-radius: 10px;
+        	    background: linear-gradient(to bottom, #FFFFFF, #77ADE2);
+            }
+            .fooster{
+        	    height: 70px;
+                display: flex;
+                justify-content: center;
+                align-items: flex-end;
+                font-size: 14px;
+        }
+        </style>
+    </head>
+    <body>
+    <div class="nav">
+    	<div class="nav-pic">
+    		<img src="images/logo.png" alt="">
+    	</div>
+    	<div class="nav-list-b">
+    	   <div class="nav-list">
+    		    <div class="listi">HOME</div>
+				<div class="listi">PRODUCT <img class="button_alike" src="images/button_alike.png" alt="">
+                      <div class="menu">
+    		          	  <p class="child-menu">content1</p>
+    		          	  <p class="child-menu">content2</p>
+    		          	  <p class="child-menu">content3</p>
+    		          </div>
+				</div>
+				<div class="listi">SUPPORT <img class="button_alike" src="images/button_alike.png" alt="">
+                       <div class="menu">
+    		          	  <p class="child-menu">content1</p>
+    		          	  <p class="child-menu">content2</p>
+    		          	  <p class="child-menu">content3</p>
+    		           </div>
+				</div>
+				<div class="listi">ABOUT <img class="button_alike" src="images/button_alike.png" alt="">
+                       <div class="menu">
+    		          	  <p class="child-menu">content1</p>
+    		          	  <p class="child-menu">content2</p>
+    		          	  <p class="child-menu">content3</p>
+    		           </div>
+				</div>
+		   </div>
+		</div>
+    </div>
+    <div class="banner">
+    	<div class="left-banner">
+    		<div class="left-title">
+    		   <h2>Hello</h2>
+               <h2>World</h2>
+               <h1>Product</h1>
+            </div>
+    	</div>
+        <div class="right-banner"></div>
+    </div>
+    <div class="content m1">
+    	<div class="content-box">
+    		<div class="fst">
+    		 <div class="box-title">
+    			<div class="title-pro">One</div>
+    			<div class="title-sub">Level2 Title</div>
+    		 </div>
+    		 <div class="box-img">
+    			<img src="images/content_img_1.jpg" alt="">
+    		 </div>
+    		</div>
+    		<div class="box-text">Some text Some text Some text Some text Some text Some text Some text Some text Some text</div>
+    	</div>
+    	<div class="content-box">
+    		<div class="fst">
+    		<div class="box-title">
+    			<div class="title-pro">Two</div>
+    			<div class="title-sub">Level2 Title</div>
+    		</div>
+    		<div class="box-img">
+    			<img src="images/content_img_2.jpg" alt="">
+    		</div>
+    		</div>
+    		<div class="box-text">Some text Some text Some text Some text Some text Some text Some text Some text Some text</div>
+    	</div>
+    	<div class="content-box">
+    		<div class="fst">
+    		<div class="box-title">
+    			<div class="title-pro">Three</div>
+    			<div class="title-sub">Level2 Title</div>
+    		</div>
+    		<div class="box-img">
+    			<img src="images/content_img_3.jpg" alt="">
+    		</div>
+    		</div>
+            <div class="box-text">Some text Some text Some text Some text Some text Some text Some text Some text Some text</div>
+    	</div>
+    </div>
+    <div class="content m2">
+        <div class="scenery">
+        	<img id="photos" src="images/ad_scenery1.jpg" onmouseover="over1()" onmouseout="out1()" alt="">
+    	    <div class="m2-text">SOME TEXT</div>
+        </div>
+        <div class="pic-select">
+		    <div class="btn selected"></div>
+		    <div class="btn"></div>
+		    <div class="btn"></div>
+	    </div>
+    </div>
+    <div class="content m3">
+    	<div class="content m3-list">
+    		<div class="list-tab">TABONE</div>
+    		<div class="list-tab s">TABTWO</div>
+    		<div class="list-tab">TABTHR</div>
+    		<div class="list-tab">TABFOR</div>
+    	</div>
+    	<div class="content m3-cp">Table Caption</div>
+    	<div class="content exl-sheet">
+    		<div class="sheet sel">
+    			<div class="sheet-row">
+				  <div class="col"></div>
+				  <div class="col">A.first</div>
+				  <div class="col">Personal Version</div>
+				  <div class="col">Company Version</div>
+			    </div>
+			    <div class="sheet-row">
+				  <div class="col">Feature A</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature B</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature C</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature D</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Price</div>
+				   <div class="col free">Free</div>
+				   <div class="col per">$9.9/<span class="per-month">mo</span></div>
+				   <div class="col whole">$99.99/<span class="per-month">mo</span></div>
+			   </div>
+    		</div>
+    		<div class="sheet">
+    			<div class="sheet-row">
+				  <div class="col"></div>
+				  <div class="col">B.second</div>
+				  <div class="col">Personal Version</div>
+				  <div class="col">Company Version</div>
+			    </div>
+			    <div class="sheet-row">
+				  <div class="col">Feature A</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature B</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature C</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature D</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Price</div>
+				   <div class="col free">Free</div>
+				   <div class="col per">$9.9/<span class="per-month">mo</span></div>
+				   <div class="col whole">$99.99/<span class="per-month">mo</span></div>
+			   </div>
+			  </div>
+			   <div class="sheet">
+    			<div class="sheet-row">
+				  <div class="col"></div>
+				  <div class="col">C.third</div>
+				  <div class="col">Personal Version</div>
+				  <div class="col">Company Version</div>
+			    </div>
+			    <div class="sheet-row">
+				  <div class="col">Feature A</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature B</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature C</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature D</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Price</div>
+				   <div class="col free">Free</div>
+				   <div class="col per">$9.9/<span class="per-month">mo</span></div>
+				   <div class="col whole">$99.99/<span class="per-month">mo</span></div>
+			   </div>
+			  </div>
+			   <div class="sheet">
+    			<div class="sheet-row">
+				  <div class="col"></div>
+				  <div class="col">D.fourth</div>
+				  <div class="col">Personal Version</div>
+				  <div class="col">Company Version</div>
+			    </div>
+			    <div class="sheet-row">
+				  <div class="col">Feature A</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+				  <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature B</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature C</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Feature D</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+				   <div class="col">Some Text Some Text Some Text</div>
+			    </div>
+			    <div class="sheet-row">
+				   <div class="col">Price</div>
+				   <div class="col free">Free</div>
+				   <div class="col per">$9.9/<span class="per-month">mo</span></div>
+				   <div class="col whole">$99.99/<span class="per-month">mo</span></div>
+			   </div>
+			  </div>
+    	</div>
+    </div>
+    <div class="content m4">
+    	<div class="form-info">
+			<div class="info-form">
+			   <select class="sinfo country" id="country" >
+				  <option value="">请选择所在国家</option>
+				  <option value="">China</option>
+				  <option value="">US</option>
+				  <option value="">Japan</option>
+			   </select>
+			   <select class="sinfo city" id="city">
+			       <option value="">请选择所在城市</option>
+			   </select>
+			   <input class="input-info" type="text" placeholder="input your email address">
+			</div>
+			<div class="button">
+				<button class="Submit-info">Submit</button>
+			</div>
+			
+		</div> 
+    </div>
+    <div class="fooster"> © 2017 IFE</div>
+    <script type="text/javascript">  
+        var arr= new Array();
+        var num = 0;
+        arr[0]="images/ad_scenery1.jpg";
+        arr[1]="images/ad_scenery2.jpg";
+        arr[2]="images/ad_scenery3.jpg";
+        var pho=document.getElementById("photos");
+        var btn=document.getElementsByClassName("btn");
+        var tabsheet=document.getElementsByClassName("list-tab");
+        var tabcont=document.getElementsByClassName("sheet");
+        var city=[["北京","上海","武汉"],
+                  ["洛杉矶","华盛顿","纽约"],
+                  ["东京","北海道","长崎"]];
+        function changeImg(){
+        	pho.src=arr[num];
+        	for(let i=0 ; i< btn.length;i++){
+        		btn[i].setAttribute('class','btn');
+        	}
+            btn[num].setAttribute('class','btn selected');
+        	if(num === arr.length - 1 )  num = 0;
+        	else num += 1;  
+        }
+        var setID = setInterval("changeImg()",1000);  
+        function over1(){
+        	clearInterval(setID);
+        }
+        function out1(){
+        	setID = setInterval("changeImg()",1000);
+        }
+        for(let i = 0; i<tabsheet.length ; i++){
+        	tabsheet[i].addEventListener('click',(e)=>{
+        		for( let j = 0 ; j < tabsheet.length ; j++){
+        			tabsheet[j].setAttribute('class','list-tab');
+        		}
+        		tabsheet[i].setAttribute('class','list-tab s');
+        		for( let k = 0 ; k < tabsheet.length ; k++){
+        			tabcont[k].setAttribute('class','sheet');
+        		}
+        		tabcont[i].setAttribute('class','sheet sel');
+        	});
+        }
+
+        var sitCountry = document.getElementById("country");
+        var sitCity = document.getElementById("city");
+        sitCountry.onchange = function(){
+        	sitCity.length = 0;
+        	for( let i = 0; i < city[this.selectedIndex-1].length; i++){
+                sitCity.options[i] = new Option(city[this.selectedIndex-1][i]);
+        	}
+        }
+    </script>
+    </body>
+</html>
